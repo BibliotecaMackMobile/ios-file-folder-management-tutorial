@@ -24,6 +24,11 @@
     self.window.rootViewController = self.navigationController; 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    NSString *caminho = [NSTemporaryDirectory() stringByAppendingPathComponent:@"MeuArquivo.txt"];
+    NSArray *nomes = @[@"Paz" , @"Amor" ] ;
+    BOOL resultado = [nomes writeToFile:caminho atomically:YES];
+    NSArray *leitura = [[NSArray alloc] initWithContentsOfFile: caminho ] ;
+    if ([leitura count] != [nomes count]) NSLog(@"Falha de leitura"); if(!resultado) NSLog(@"Falha de escrita");
     return YES;
 }
 
