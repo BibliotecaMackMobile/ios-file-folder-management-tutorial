@@ -18,6 +18,7 @@
     UISwipeGestureRecognizer *swipeLeft;
     UISwipeGestureRecognizer *swipeRight;
     CATransition *transition;
+    
 
 }
 
@@ -81,6 +82,7 @@
     swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:swipeRight];
     [self update];
+    
 
 }
 
