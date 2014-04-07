@@ -18,7 +18,9 @@
     UISwipeGestureRecognizer *swipeLeft;
     UISwipeGestureRecognizer *swipeRight;
     CATransition *transition;
-
+    NSFileManager *fileManager;
+    NSArray *urls;
+    
 }
 
 @end
@@ -46,7 +48,20 @@
     nome.textAlignment = NSTextAlignmentCenter;
     nome.font = [UIFont fontWithName:@"Arial" size:10];
     nome.textColor = [UIColor redColor];
-    [self.view addSubview:nome];
+    [self.view addSubview:nome]; 
+    
+    
+    fileManager = [[NSFileManager alloc] init ];
+    urls = [fileManager URLsForDirectory:
+                                                            NSDocumentDirectory inDomains:NSUserDomainMask];
+    for(int i = 0; i < [urls count]; i++ ) {
+        NSLog(@"%@", urls[i]); }
+
+    NSString *caminho = [NSTemporaryDirectory() stringByAppendingPathComponent:@"MeuArquivo.txt"];
+    NSArray *nomes = @[@"Paz" , @"Amor" ] ;
+    BOOL resultado = [nomes writeToFile:caminho atomically:YES];
+    NSArray *leitura = [[NSArray alloc] initWithContentsOfFile: caminho ] ;
+    if ([leitura count] != [nomes count]) NSLog(@"Falha de leitura"); if(!resultado) NSLog(@"Falha de escrita");
 
     
     //cria a image view e inicializa - TODO carregar e guardar fotos. Desafio Ouro
