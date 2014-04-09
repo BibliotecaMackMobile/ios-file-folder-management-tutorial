@@ -10,6 +10,7 @@
 #import "ReceitaStore.h"
 #import "Receita.h"
 #import "ViewControllerDetalhesReceita.h"
+#import "ViewControllerCriacaoReceita.h"
 
 @interface ViewControllerTabelaReceitas ()
 
@@ -24,8 +25,16 @@
         receitaStore = [ReceitaStore sharedInstance];
         [receitaStore testarCriacaoReceita];
         self.navigationItem.title = @"Receitas";
+        btnNovaReceita = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(irParaTelaDeCriacao)];
+        self.navigationItem.rightBarButtonItem = btnNovaReceita;
     }
     return self;
+}
+
+-(void) irParaTelaDeCriacao {
+    ViewControllerCriacaoReceita *telaCriacao = [[ViewControllerCriacaoReceita alloc] initWithStyle:UITableViewStyleGrouped];
+    UINavigationController *barraNavegacao = [[UINavigationController alloc] initWithRootViewController:telaCriacao];
+    [self presentViewController:barraNavegacao animated:YES completion:nil];
 }
 
 - (void)viewDidLoad
