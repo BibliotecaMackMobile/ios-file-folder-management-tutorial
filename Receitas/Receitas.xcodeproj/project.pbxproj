@@ -22,6 +22,11 @@
 		2752EA9718E8DA81001EF848 /* ReceitaStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9618E8DA81001EF848 /* ReceitaStore.m */; };
 		2752EA9A18E8DB92001EF848 /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9918E8DB92001EF848 /* Receita.m */; };
 		2752EA9D18E8DC9F001EF848 /* ReceitaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */; };
+		65415B6218F5A9C6004F7771 /* Ingrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = 65415B6118F5A9C6004F7771 /* Ingrediente.m */; };
+		65415B6518F5AFF1004F7771 /* ViewControllerTabelaReceitas.m in Sources */ = {isa = PBXBuildFile; fileRef = 65415B6418F5AFF1004F7771 /* ViewControllerTabelaReceitas.m */; };
+		65415B6718F5B87E004F7771 /* imgteste.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65415B6618F5B87E004F7771 /* imgteste.jpg */; };
+		65415B6A18F5BA86004F7771 /* ViewControllerTelaInicial.m in Sources */ = {isa = PBXBuildFile; fileRef = 65415B6918F5BA86004F7771 /* ViewControllerTelaInicial.m */; };
+		65415B7018F5C038004F7771 /* ViewControllerDetalhesReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = 65415B6F18F5C038004F7771 /* ViewControllerDetalhesReceita.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,15 @@
 		2752EA9918E8DB92001EF848 /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receita.m; sourceTree = "<group>"; };
 		2752EA9B18E8DC9F001EF848 /* ReceitaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceitaViewController.h; sourceTree = "<group>"; };
 		2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceitaViewController.m; sourceTree = "<group>"; };
+		65415B6018F5A9C6004F7771 /* Ingrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingrediente.h; sourceTree = "<group>"; };
+		65415B6118F5A9C6004F7771 /* Ingrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingrediente.m; sourceTree = "<group>"; };
+		65415B6318F5AFF1004F7771 /* ViewControllerTabelaReceitas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerTabelaReceitas.h; sourceTree = "<group>"; };
+		65415B6418F5AFF1004F7771 /* ViewControllerTabelaReceitas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTabelaReceitas.m; sourceTree = "<group>"; };
+		65415B6618F5B87E004F7771 /* imgteste.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imgteste.jpg; path = ../../../../Pictures/imgteste.jpg; sourceTree = "<group>"; };
+		65415B6818F5BA86004F7771 /* ViewControllerTelaInicial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerTelaInicial.h; sourceTree = "<group>"; };
+		65415B6918F5BA86004F7771 /* ViewControllerTelaInicial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTelaInicial.m; sourceTree = "<group>"; };
+		65415B6E18F5C038004F7771 /* ViewControllerDetalhesReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerDetalhesReceita.h; path = ../ViewControllerDetalhesReceita.h; sourceTree = "<group>"; };
+		65415B6F18F5C038004F7771 /* ViewControllerDetalhesReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerDetalhesReceita.m; path = ../ViewControllerDetalhesReceita.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +130,9 @@
 		2752EA6C18E8DA1A001EF848 /* Receitas */ = {
 			isa = PBXGroup;
 			children = (
+				65415B6E18F5C038004F7771 /* ViewControllerDetalhesReceita.h */,
+				65415B6F18F5C038004F7771 /* ViewControllerDetalhesReceita.m */,
+				65415B6618F5B87E004F7771 /* imgteste.jpg */,
 				2752EA7518E8DA1A001EF848 /* MackenzieAppDelegate.h */,
 				2752EA7618E8DA1A001EF848 /* MackenzieAppDelegate.m */,
 				2752EA9518E8DA81001EF848 /* ReceitaStore.h */,
@@ -123,8 +140,14 @@
 				2752EA7818E8DA1A001EF848 /* Images.xcassets */,
 				2752EA6D18E8DA1A001EF848 /* Supporting Files */,
 				2752EA9818E8DB92001EF848 /* Receita.h */,
+				65415B6018F5A9C6004F7771 /* Ingrediente.h */,
+				65415B6318F5AFF1004F7771 /* ViewControllerTabelaReceitas.h */,
+				65415B6418F5AFF1004F7771 /* ViewControllerTabelaReceitas.m */,
+				65415B6118F5A9C6004F7771 /* Ingrediente.m */,
 				2752EA9918E8DB92001EF848 /* Receita.m */,
 				2752EA9B18E8DC9F001EF848 /* ReceitaViewController.h */,
+				65415B6818F5BA86004F7771 /* ViewControllerTelaInicial.h */,
+				65415B6918F5BA86004F7771 /* ViewControllerTelaInicial.m */,
 				2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */,
 			);
 			path = Receitas;
@@ -235,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65415B6718F5B87E004F7771 /* imgteste.jpg in Resources */,
 				2752EA7118E8DA1A001EF848 /* InfoPlist.strings in Resources */,
 				2752EA7918E8DA1A001EF848 /* Images.xcassets in Resources */,
 			);
@@ -255,11 +279,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65415B6218F5A9C6004F7771 /* Ingrediente.m in Sources */,
 				2752EA7718E8DA1A001EF848 /* MackenzieAppDelegate.m in Sources */,
 				2752EA9D18E8DC9F001EF848 /* ReceitaViewController.m in Sources */,
 				2752EA9A18E8DB92001EF848 /* Receita.m in Sources */,
+				65415B6A18F5BA86004F7771 /* ViewControllerTelaInicial.m in Sources */,
 				2752EA7318E8DA1A001EF848 /* main.m in Sources */,
 				2752EA9718E8DA81001EF848 /* ReceitaStore.m in Sources */,
+				65415B6518F5AFF1004F7771 /* ViewControllerTabelaReceitas.m in Sources */,
+				65415B7018F5C038004F7771 /* ViewControllerDetalhesReceita.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +486,7 @@
 				2752EA9118E8DA1A001EF848 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2752EA9218E8DA1A001EF848 /* Build configuration list for PBXNativeTarget "ReceitasTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +495,7 @@
 				2752EA9418E8DA1A001EF848 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

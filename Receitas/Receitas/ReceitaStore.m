@@ -9,7 +9,7 @@
 #import "ReceitaStore.h"
 
 @implementation ReceitaStore {
-    NSArray *receitas;
+    NSMutableArray *receitas;
     NSInteger current;
 }
 
@@ -25,11 +25,29 @@
 -(id)initPrivado {
     self = [super init];
     if(self) {
-        // TODO recuperar as receitas do arquivo
+        receitas = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
+-(void) testarCriacaoReceita {
+    Receita *teste = [[Receita alloc] init];
+    teste.nome = @"Teste";
+    teste.instrucoes = @"Fazer testes";
+    teste.imagem = UIImageJPEGRepresentation([UIImage imageNamed:@"imgteste.jpg"], 1.00);
+    [receitas addObject:teste];
+}
+-(NSUInteger) quantidadeReceitas {
+    return [receitas count];
+}
+
+-(Receita *)obterReceitaDoIndice:(NSUInteger)indice {
+    return [receitas objectAtIndex:indice];
+}
+
+-(NSArray *)obterReceitas {
+    return receitas;
+}
 
 -(Receita*)previous {
     if(current == 0) {

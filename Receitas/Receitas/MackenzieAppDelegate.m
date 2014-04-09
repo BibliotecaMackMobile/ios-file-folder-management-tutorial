@@ -8,27 +8,23 @@
 
 #import "MackenzieAppDelegate.h"
 #import "ReceitaViewController.h"
+#import "ViewControllerTabelaReceitas.h"
+#import "ViewControllerTelaInicial.h"
 
 @implementation MackenzieAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    ReceitaViewController *viewController = [[ReceitaViewController alloc]
-                                            initWithNibName:nil
-                                            bundle:nil];
-    
-    
+   
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    ViewControllerTabelaReceitas *tabelaReceitas = [[ViewControllerTabelaReceitas alloc] initWithStyle:UITableViewStylePlain];
     self.navigationController = [[UINavigationController alloc]
-                                 initWithRootViewController:viewController];
+                                 initWithRootViewController:tabelaReceitas];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navigationController; 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    NSString *caminho = [NSTemporaryDirectory() stringByAppendingPathComponent:@"MeuArquivo.txt"];
-    NSArray *nomes = @[@"Paz" , @"Amor" ] ;
-    BOOL resultado = [nomes writeToFile:caminho atomically:YES];
-    NSArray *leitura = [[NSArray alloc] initWithContentsOfFile: caminho ] ;
-    if ([leitura count] != [nomes count]) NSLog(@"Falha de leitura"); if(!resultado) NSLog(@"Falha de escrita");
     return YES;
 }
 
