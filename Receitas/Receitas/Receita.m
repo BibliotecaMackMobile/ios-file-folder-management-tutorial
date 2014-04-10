@@ -15,6 +15,14 @@
 @synthesize imagem;
 @synthesize ingredientes;
 
+-(Receita *) init {
+    self = [super init];
+    if (self) {
+        self.ingredientes = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 -(void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.nome forKey:@"nome"];
     [aCoder encodeObject:self.instrucoes forKey:@"instrucoes"];

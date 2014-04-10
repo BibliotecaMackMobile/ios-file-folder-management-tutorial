@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewControllerCriacaoReceita.h"
 
 @interface ViewControllerTelaCriacaoInstrucoes : UIViewController {
     UITextView *txtInstrucoes;
 }
+
+-(ViewControllerTelaCriacaoInstrucoes *) initComTexto:(NSString *)texto;
+
+@property ViewControllerCriacaoReceita *viewCriacao;
 
 @end

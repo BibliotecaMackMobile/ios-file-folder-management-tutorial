@@ -16,4 +16,6 @@
 @property NSData *imagem;
 @property NSMutableArray *ingredientes;
 
+-(Receita *)init;
+
 @end

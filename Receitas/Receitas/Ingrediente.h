@@ -12,5 +12,7 @@
 
 @property NSString *nome;
 @property NSNumber *quantidade;
+@property NSString *unidadeMedida;
+
 
 @end

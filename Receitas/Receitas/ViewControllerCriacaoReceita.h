@@ -13,6 +13,11 @@
     Receita *novaReceita;
     UIBarButtonItem *btnCancelar;
     UITextField *txtNome;
+    UIActionSheet *opcoesSemFoto;
+    UIActionSheet *opcoesComFoto;
 }
+
+-(void)atualizarInstrucoes:(NSString *)instrucoes;
+-(void)inserirIngrediente:(Ingrediente *)ingrediente;
 
 @end

@@ -14,17 +14,35 @@
 
 @implementation ViewControllerNovoIngrediente
 
+@synthesize viewCriacao;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-        txtNome = [[UITextField alloc] initWithFrame:CGRectMake(14, 0, 120, 44)];
+        txtNome = [[UITextField alloc] initWithFrame:CGRectMake(14, 0, window.bounds.size.width - 28, 44)];
         txtNome.placeholder = @"Nome";
-        txtQuantidade = [[UITextField alloc] initWithFrame:CGRectMake(120, 0, 0.5 * window.bounds.size.width + 44, 44)];
+        txtUnidadeMedida = [[UITextField alloc] initWithFrame:CGRectMake(14, 0, window.bounds.size.width - 28, 44)];
+        txtUnidadeMedida.placeholder = @"Unidade de Medida";
+        txtQuantidade = [[UITextField alloc] initWithFrame:CGRectMake(14, 0, window.bounds.size.width - 28, 44)];
+        txtQuantidade.placeholder = @"Quantidade";
         txtQuantidade.keyboardType = UIKeyboardTypeNumberPad;
+        btnCriarIngrediente = [[UIBarButtonItem alloc] initWithTitle:@"Criar Ingrediente" style:UIBarButtonItemStylePlain target:self action:@selector(criarIngrediente)];
+        self.navigationItem.rightBarButtonItem = btnCriarIngrediente;
     }
     return self;
+}
+
+-(void)criarIngrediente {
+    novoIngrediente = [[Ingrediente alloc] init];
+    novoIngrediente.nome = txtNome.text;
+    novoIngrediente.unidadeMedida = txtUnidadeMedida.text;
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    novoIngrediente.quantidade = [f numberFromString:txtQuantidade.text];
+    [viewCriacao inserirIngrediente:novoIngrediente];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad
@@ -54,7 +72,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 
@@ -69,7 +87,9 @@
             [cell.contentView addSubview:txtNome];
             break;
         case 1:
-            cell.textLabel.text = @"Quantidade";
+            [cell.contentView addSubview:txtUnidadeMedida];
+            break;
+        case 2:
             [cell.contentView addSubview:txtQuantidade];
             break;
         default:

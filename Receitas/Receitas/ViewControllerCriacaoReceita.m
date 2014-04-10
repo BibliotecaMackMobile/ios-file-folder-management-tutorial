@@ -20,16 +20,36 @@
 {
     self = [super initWithStyle:style];
     if (self) {
+        novaReceita = [[Receita alloc] init];
         UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
         txtNome = [[UITextField alloc] initWithFrame:CGRectMake(14, 0, window.bounds.size.width - 24, 44)];
         txtNome.placeholder = @"Nome";
         txtNome.delegate = self;
+        [txtNome addTarget:self action:@selector(atualizarNome) forControlEvents:UIControlEventEditingChanged];
         btnCancelar = [[UIBarButtonItem alloc] initWithTitle:@"Cancelar" style:UIBarButtonItemStylePlain target:self action:@selector(voltar)];
         self.navigationItem.leftBarButtonItem = btnCancelar;
         self.navigationItem.title = @"Nova Receita";
+        opcoesSemFoto = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Escolher Foto da Biblioteca",@"Tirar Foto", nil];
+        opcoesComFoto = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:@"Remover Foto" otherButtonTitles:@"Escolher Foto da Biblioteca",@"Tirar Foto", nil];
     }
     return self;
 }
+
+-(void)atualizarNome {
+    novaReceita.nome = txtNome.text;
+}
+
+-(void)atualizarInstrucoes:(NSString *)instrucoes {
+    novaReceita.instrucoes = instrucoes;
+    [self.tableView reloadData];
+}
+
+-(void)inserirIngrediente:(Ingrediente *)ingrediente {
+    [novaReceita.ingredientes addObject:ingrediente];
+    [self.tableView reloadData];
+}
+
+
 
 -(void)voltar {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -86,17 +106,32 @@
                 case 0:
                     [cell.contentView addSubview:txtNome];
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                    cell.textLabel.textColor = [UIColor blackColor];
                     break;
                 default:
-                    cell.textLabel.text = @"Instruções";
+                    if (novaReceita.instrucoes == nil || [novaReceita.instrucoes isEqualToString:@""]) {
+                        cell.textLabel.text = @"Adicionar Instruções";
+                    }
+                    else cell.textLabel.text = novaReceita.instrucoes;
                     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    cell.textLabel.textColor = [UIColor blackColor];
                     break;
             }
             break;
         case 1:
-            if ((indexPath.row == 0 && [novaReceita.ingredientes count] == 0) || (indexPath.row == [novaReceita.ingredientes count] + 1)) {
+            if ((indexPath.row == 0 && [novaReceita.ingredientes count] == 0) || (indexPath.row == [novaReceita.ingredientes count])) {
                 cell.textLabel.text = @"Adicionar Ingrediente";
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                cell.textLabel.textColor = [UIColor blackColor];
+            }
+            else {
+                NSString *nome = [[novaReceita.ingredientes objectAtIndex:indexPath.row] nome];
+                NSNumber *quantidade = [[novaReceita.ingredientes objectAtIndex:indexPath.row] quantidade];
+                NSString *unidadeMedida = [[novaReceita.ingredientes objectAtIndex:indexPath.row] unidadeMedida];
+                cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ de %@",quantidade,unidadeMedida,nome];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                cell.accessoryType = UITableViewCellSelectionStyleNone;
+                cell.textLabel.textColor = [UIColor blackColor];
             }
             break;
         default:
@@ -111,7 +146,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ViewControllerTelaCriacaoInstrucoes *telaInstrucoes = [[ViewControllerTelaCriacaoInstrucoes alloc] initWithNibName:nil bundle:nil];
+    ViewControllerTelaCriacaoInstrucoes *telaInstrucoes = [[ViewControllerTelaCriacaoInstrucoes alloc] initComTexto:novaReceita.instrucoes];
+    [telaInstrucoes setViewCriacao:self];
     switch (indexPath.section) {
         case 0:
             switch (indexPath.row) {
@@ -123,14 +159,26 @@
                     break;
             }
             break;
-        default:
-            if ((indexPath.row == 0 && [novaReceita.ingredientes count] == 0) || (indexPath.row == [novaReceita.ingredientes count] + 1)) {
+        case 1:
+            if ((indexPath.row == 0 && [novaReceita.ingredientes count] == 0) || (indexPath.row == [novaReceita.ingredientes count])) {
                 ViewControllerNovoIngrediente *telaNovoIngrediente = [[ViewControllerNovoIngrediente alloc] initWithStyle:UITableViewStyleGrouped];
+                [telaNovoIngrediente setViewCriacao:self];
                 [self.navigationController pushViewController:telaNovoIngrediente animated:YES];
             }
             break;
+        case 2:
+            if (novaReceita.imagem == nil) {
+                [opcoesSemFoto showInView:self.view];
+            }
+            else [opcoesComFoto showInView:self.view];
+            break;
     }
 }
+
+- (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+}
+
 
 
 /*

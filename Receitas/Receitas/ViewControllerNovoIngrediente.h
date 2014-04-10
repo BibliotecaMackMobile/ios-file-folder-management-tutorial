@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "Ingrediente.h"
+#import "ViewControllerCriacaoReceita.h"
 
 @interface ViewControllerNovoIngrediente : UITableViewController {
     Ingrediente *novoIngrediente;
     UITextField *txtNome;
+    UITextField *txtUnidadeMedida;
     UITextField *txtQuantidade;
+    UIBarButtonItem *btnCriarIngrediente;
 }
+
+@property ViewControllerCriacaoReceita *viewCriacao;
 
 @end
