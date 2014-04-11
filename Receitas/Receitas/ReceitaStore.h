@@ -16,7 +16,6 @@
 -(Receita *)next;
 -(Receita *)previous;
 -(void)addReceita:(Receita*)novaReceita;
--(void)testarCriacaoReceita;
 -(Receita *)obterReceitaDoIndice:(NSUInteger)indice;
 -(NSArray *)obterReceitas;
 -(NSUInteger)quantidadeReceitas;

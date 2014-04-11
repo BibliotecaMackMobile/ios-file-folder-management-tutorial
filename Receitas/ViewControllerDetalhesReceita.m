@@ -30,26 +30,36 @@
         UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
         scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, window.bounds.size.width, window.bounds.size.height)];
         scrollView.contentSize = window.bounds.size;
-        
-        imgReceita = [[UIImageView alloc] initWithFrame:CGRectMake(window.bounds.size.width * 0.25, 24, window.bounds.size.width * 0.5, window.bounds.size.width * 0.5)];
+        UIImage *imagemDaReceita = [UIImage imageWithData:receita.imagem];
+        imgReceita = [[UIImageView alloc] initWithFrame:CGRectMake((window.bounds.size.width-imagemDaReceita.size.width)/2 , 24,imagemDaReceita.size.width,imagemDaReceita.size.height)];
         imgReceita.contentMode = UIViewContentModeScaleAspectFill;
-        UIImage *imagemDaReceita = [self imageWithImage:[UIImage imageWithData:receita.imagem] scaledToSize:CGSizeMake(window.bounds.size.width * 0.5, window.bounds.size.width * 0.5)];
         imgReceita.image = imagemDaReceita;
         [scrollView addSubview:imgReceita];
         
-        txtNome = [[UILabel alloc] initWithFrame:CGRectMake(window.bounds.size.width * 0.25, 36 + window.bounds.size.width * 0.5, window.bounds.size.width * 0.50, 72)];
+        txtNome = [[UILabel alloc] initWithFrame:CGRectMake(window.bounds.size.width * 0.25, 36 + imagemDaReceita.size.height, window.bounds.size.width * 0.50, 72)];
         txtNome.text = receita.nome;
         txtNome.font = [UIFont systemFontOfSize:36];
         txtNome.textAlignment = NSTextAlignmentCenter;
-    
-        txtInstrucoes = [[UITextView alloc] initWithFrame:CGRectMake(24, 36 + 72 + window.bounds.size.width * 0.5, window.bounds.size.width - 48, window.bounds.size.height)];
+        txtIngredientes = [[UITextView alloc] initWithFrame:CGRectMake(24, 36 + 72 + imagemDaReceita.size.height, window.bounds.size.width - 48, window.bounds.size.height)];
+
+        NSMutableString *informacoesIngredientes = [[NSMutableString alloc] initWithString:@""];
+        for (Ingrediente *i in receita.ingredientes) {
+            [informacoesIngredientes appendString:[NSString stringWithFormat:@"%@ %@ de %@\n",i.quantidade,i.unidadeMedida,i.nome]];
+        }
+        txtIngredientes.text = informacoesIngredientes;
+        txtIngredientes.editable = NO;
+        txtIngredientes.font = [UIFont systemFontOfSize:16];
+        txtIngredientes.textAlignment = NSTextAlignmentCenter;
+        txtIngredientes.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1];
+        
+        txtInstrucoes = [[UITextView alloc] initWithFrame:CGRectMake(24, 36 + 72 + 12 + imagemDaReceita.size.height + [self textViewHeightForAttributedText:[[NSAttributedString alloc] initWithString:txtIngredientes.text] andWidth:window.bounds.size.width - 48], window.bounds.size.width - 48, window.bounds.size.height)];
         txtInstrucoes.editable = NO;
         txtInstrucoes.text = receita.instrucoes;
         txtInstrucoes.scrollEnabled = NO;
         txtInstrucoes.font = [UIFont systemFontOfSize:16];
         [scrollView addSubview:txtNome];
+        [scrollView addSubview:txtIngredientes];
         [scrollView addSubview:txtInstrucoes];
-        
         [self.view addSubview:scrollView];
         
         
@@ -91,7 +101,7 @@
 {
     [super viewDidLoad];
      UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-    scrollView.contentSize = CGSizeMake(window.bounds.size.width, 72 + 12 + window.bounds.size.width * 0.5 + 72 + 12 + [self textViewHeightForAttributedText:[[NSAttributedString alloc] initWithString:txtInstrucoes.text] andWidth:window.bounds.size.width - 48]);
+    scrollView.contentSize = CGSizeMake(window.bounds.size.width, 72 + 12 + imgReceita.image.size.height + 72 + 12 + [self textViewHeightForAttributedText:[[NSAttributedString alloc] initWithString:txtInstrucoes.text] andWidth:window.bounds.size.width - 48] + [self textViewHeightForAttributedText:[[NSAttributedString alloc] initWithString:txtIngredientes.text] andWidth:window.bounds.size.width-48]);
     // Do any additional setup after loading the view.
 }
 

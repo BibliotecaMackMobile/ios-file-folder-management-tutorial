@@ -14,6 +14,7 @@
     UIScrollView *scrollView;
     UIImageView *imgReceita;
     UILabel *txtNome;
+    UITextView *txtIngredientes;
     UITextView *txtInstrucoes;
 }
 

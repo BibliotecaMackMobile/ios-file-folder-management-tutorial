@@ -23,8 +23,6 @@
     self = [super initWithStyle:style];
     if (self) {
         receitaStore = [ReceitaStore sharedInstance];
-        [receitaStore testarCriacaoReceita];
-        self.navigationItem.title = @"Receitas";
         btnNovaReceita = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(irParaTelaDeCriacao)];
         self.navigationItem.rightBarButtonItem = btnNovaReceita;
     }
@@ -33,6 +31,7 @@
 
 -(void) irParaTelaDeCriacao {
     ViewControllerCriacaoReceita *telaCriacao = [[ViewControllerCriacaoReceita alloc] initWithStyle:UITableViewStyleGrouped];
+    [telaCriacao setTelaReceitas:self];
     UINavigationController *barraNavegacao = [[UINavigationController alloc] initWithRootViewController:telaCriacao];
     [self presentViewController:barraNavegacao animated:YES completion:nil];
 }
@@ -120,6 +119,10 @@
     Receita *receitaEscolhida = [receitaStore obterReceitaDoIndice:indexPath.row];
     ViewControllerDetalhesReceita *detalhesReceita = [[ViewControllerDetalhesReceita alloc] initComReceita:receitaEscolhida];
     [self.navigationController pushViewController:detalhesReceita animated:YES];
+}
+
+-(void)atualizarReceitas {
+    [self.tableView reloadData];
 }
 
 /*

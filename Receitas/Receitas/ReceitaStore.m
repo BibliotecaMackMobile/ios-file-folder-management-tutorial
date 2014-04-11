@@ -25,18 +25,14 @@
 -(id)initPrivado {
     self = [super init];
     if(self) {
-        receitas = [[NSMutableArray alloc] init];
+       NSString *caminho = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0]stringByAppendingPathComponent:@"receitas.txt"];
+        NSLog(@"%@",caminho);
+        NSData *leitura = [[NSData alloc] initWithContentsOfFile:caminho];
+        receitas = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:leitura]];
     }
     return self;
 }
 
--(void) testarCriacaoReceita {
-    Receita *teste = [[Receita alloc] init];
-    teste.nome = @"Teste";
-    teste.instrucoes = @"Fazer testes";
-    teste.imagem = UIImageJPEGRepresentation([UIImage imageNamed:@"imgteste.jpg"], 1.00);
-    [receitas addObject:teste];
-}
 -(NSUInteger) quantidadeReceitas {
     return [receitas count];
 }
@@ -68,7 +64,13 @@
 }
 
 -(void)addReceita:(Receita*)novaReceita {
-    // TODO implementar este metodo -> adicionar no array e no arquivo!!!
+    [receitas addObject:novaReceita];
+    NSString *caminho = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0]stringByAppendingPathComponent:@"receitas.txt"];
+    NSData *dadosParaEscrever = [NSKeyedArchiver archivedDataWithRootObject:receitas];
+    BOOL resultado = [dadosParaEscrever writeToFile:caminho atomically:YES];
+    if (!resultado) {
+        NSLog(@"Erro de escrita");
+    }
 }
 
 

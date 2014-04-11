@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Receita.h"
+#import "ViewControllerTabelaReceitas.h"
 
 @interface ViewControllerCriacaoReceita : UITableViewController {
     Receita *novaReceita;
@@ -15,7 +16,11 @@
     UITextField *txtNome;
     UIActionSheet *opcoesSemFoto;
     UIActionSheet *opcoesComFoto;
+    UIImageView *imgEscolhida;
+    UIBarButtonItem *btnCriar;
 }
+
+@property ViewControllerTabelaReceitas *telaReceitas;
 
 -(void)atualizarInstrucoes:(NSString *)instrucoes;
 -(void)inserirIngrediente:(Ingrediente *)ingrediente;

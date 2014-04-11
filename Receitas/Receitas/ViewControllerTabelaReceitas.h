@@ -14,4 +14,6 @@
     UIBarButtonItem *btnNovaReceita;
 }
 
+-(void)atualizarReceitas;
+
 @end
