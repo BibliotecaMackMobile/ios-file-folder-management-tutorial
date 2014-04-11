@@ -45,26 +45,20 @@
     return receitas;
 }
 
--(Receita*)previous {
-    if(current == 0) {
-        current = receitas.count - 1;
-    } else {
-        current--;
-    }
-    return [receitas objectAtIndex:current];
-}
-
--(Receita*)next {
-    if(current == receitas.count - 1) {
-        current = 0;
-    } else {
-        current++;
-    }
-    return [receitas objectAtIndex:current];
-}
 
 -(void)addReceita:(Receita*)novaReceita {
     [receitas addObject:novaReceita];
+    [self salvarArquivo];
+
+}
+
+
+-(void)deletarReceita:(Receita *)receita {
+    [receitas removeObject:receita];
+    [self salvarArquivo];
+}
+
+-(void)salvarArquivo {
     NSString *caminho = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0]stringByAppendingPathComponent:@"receitas.txt"];
     NSData *dadosParaEscrever = [NSKeyedArchiver archivedDataWithRootObject:receitas];
     BOOL resultado = [dadosParaEscrever writeToFile:caminho atomically:YES];
@@ -72,8 +66,5 @@
         NSLog(@"Erro de escrita");
     }
 }
-
-
-
 
 @end

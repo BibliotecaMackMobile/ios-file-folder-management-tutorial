@@ -57,11 +57,8 @@
         txtInstrucoes.text = receita.instrucoes;
         txtInstrucoes.scrollEnabled = NO;
         txtInstrucoes.font = [UIFont systemFontOfSize:16];
-        [scrollView addSubview:txtNome];
-        [scrollView addSubview:txtIngredientes];
-        [scrollView addSubview:txtInstrucoes];
-        [self.view addSubview:scrollView];
         
+        self.navigationItem.title = receita.nome;
         
     }
     return self;
@@ -100,26 +97,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
      UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
     scrollView.contentSize = CGSizeMake(window.bounds.size.width, 72 + 12 + imgReceita.image.size.height + 72 + 12 + [self textViewHeightForAttributedText:[[NSAttributedString alloc] initWithString:txtInstrucoes.text] andWidth:window.bounds.size.width - 48] + [self textViewHeightForAttributedText:[[NSAttributedString alloc] initWithString:txtIngredientes.text] andWidth:window.bounds.size.width-48]);
-    // Do any additional setup after loading the view.
+    [scrollView addSubview:txtNome];
+    [scrollView addSubview:txtIngredientes];
+    [scrollView addSubview:txtInstrucoes];
+    [self.view addSubview:scrollView];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

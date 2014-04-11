@@ -12,6 +12,7 @@
 @interface ViewControllerTabelaReceitas : UITableViewController {
     ReceitaStore *receitaStore;
     UIBarButtonItem *btnNovaReceita;
+    UIBarButtonItem *btnEditar;
 }
 
 -(void)atualizarReceitas;

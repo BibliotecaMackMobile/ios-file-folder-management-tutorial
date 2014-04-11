@@ -7,9 +7,7 @@
 //
 
 #import "MackenzieAppDelegate.h"
-#import "ReceitaViewController.h"
 #import "ViewControllerTabelaReceitas.h"
-#import "ViewControllerTelaInicial.h"
 
 @implementation MackenzieAppDelegate
 

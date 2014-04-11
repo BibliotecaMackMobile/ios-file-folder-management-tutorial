@@ -21,11 +21,8 @@
 		2752EA8C18E8DA1A001EF848 /* ReceitasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA8B18E8DA1A001EF848 /* ReceitasTests.m */; };
 		2752EA9718E8DA81001EF848 /* ReceitaStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9618E8DA81001EF848 /* ReceitaStore.m */; };
 		2752EA9A18E8DB92001EF848 /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9918E8DB92001EF848 /* Receita.m */; };
-		2752EA9D18E8DC9F001EF848 /* ReceitaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */; };
 		65415B6218F5A9C6004F7771 /* Ingrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = 65415B6118F5A9C6004F7771 /* Ingrediente.m */; };
 		65415B6518F5AFF1004F7771 /* ViewControllerTabelaReceitas.m in Sources */ = {isa = PBXBuildFile; fileRef = 65415B6418F5AFF1004F7771 /* ViewControllerTabelaReceitas.m */; };
-		65415B6718F5B87E004F7771 /* imgteste.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65415B6618F5B87E004F7771 /* imgteste.jpg */; };
-		65415B6A18F5BA86004F7771 /* ViewControllerTelaInicial.m in Sources */ = {isa = PBXBuildFile; fileRef = 65415B6918F5BA86004F7771 /* ViewControllerTelaInicial.m */; };
 		65415B7018F5C038004F7771 /* ViewControllerDetalhesReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = 65415B6F18F5C038004F7771 /* ViewControllerDetalhesReceita.m */; };
 		65415B7318F5D136004F7771 /* ViewControllerCriacaoReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = 65415B7218F5D136004F7771 /* ViewControllerCriacaoReceita.m */; };
 		65415B7618F5DD49004F7771 /* ViewControllerTelaCriacaoInstrucoes.m in Sources */ = {isa = PBXBuildFile; fileRef = 65415B7518F5DD49004F7771 /* ViewControllerTelaCriacaoInstrucoes.m */; };
@@ -63,15 +60,10 @@
 		2752EA9618E8DA81001EF848 /* ReceitaStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceitaStore.m; sourceTree = "<group>"; };
 		2752EA9818E8DB92001EF848 /* Receita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receita.h; sourceTree = "<group>"; };
 		2752EA9918E8DB92001EF848 /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receita.m; sourceTree = "<group>"; };
-		2752EA9B18E8DC9F001EF848 /* ReceitaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceitaViewController.h; sourceTree = "<group>"; };
-		2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceitaViewController.m; sourceTree = "<group>"; };
 		65415B6018F5A9C6004F7771 /* Ingrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingrediente.h; sourceTree = "<group>"; };
 		65415B6118F5A9C6004F7771 /* Ingrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingrediente.m; sourceTree = "<group>"; };
 		65415B6318F5AFF1004F7771 /* ViewControllerTabelaReceitas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerTabelaReceitas.h; sourceTree = "<group>"; };
 		65415B6418F5AFF1004F7771 /* ViewControllerTabelaReceitas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTabelaReceitas.m; sourceTree = "<group>"; };
-		65415B6618F5B87E004F7771 /* imgteste.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imgteste.jpg; path = ../../../../Pictures/imgteste.jpg; sourceTree = "<group>"; };
-		65415B6818F5BA86004F7771 /* ViewControllerTelaInicial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerTelaInicial.h; sourceTree = "<group>"; };
-		65415B6918F5BA86004F7771 /* ViewControllerTelaInicial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTelaInicial.m; sourceTree = "<group>"; };
 		65415B6E18F5C038004F7771 /* ViewControllerDetalhesReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerDetalhesReceita.h; path = ../ViewControllerDetalhesReceita.h; sourceTree = "<group>"; };
 		65415B6F18F5C038004F7771 /* ViewControllerDetalhesReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerDetalhesReceita.m; path = ../ViewControllerDetalhesReceita.m; sourceTree = "<group>"; };
 		65415B7118F5D136004F7771 /* ViewControllerCriacaoReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerCriacaoReceita.h; sourceTree = "<group>"; };
@@ -139,31 +131,12 @@
 		2752EA6C18E8DA1A001EF848 /* Receitas */ = {
 			isa = PBXGroup;
 			children = (
-				65415B6E18F5C038004F7771 /* ViewControllerDetalhesReceita.h */,
-				65415B6F18F5C038004F7771 /* ViewControllerDetalhesReceita.m */,
-				65415B7118F5D136004F7771 /* ViewControllerCriacaoReceita.h */,
-				65415B7218F5D136004F7771 /* ViewControllerCriacaoReceita.m */,
-				65415B7418F5DD49004F7771 /* ViewControllerTelaCriacaoInstrucoes.h */,
-				65415B7518F5DD49004F7771 /* ViewControllerTelaCriacaoInstrucoes.m */,
-				65415B7718F5E0C7004F7771 /* ViewControllerNovoIngrediente.h */,
-				65415B7818F5E0C7004F7771 /* ViewControllerNovoIngrediente.m */,
-				65415B6618F5B87E004F7771 /* imgteste.jpg */,
-				2752EA7518E8DA1A001EF848 /* MackenzieAppDelegate.h */,
-				2752EA7618E8DA1A001EF848 /* MackenzieAppDelegate.m */,
-				2752EA9518E8DA81001EF848 /* ReceitaStore.h */,
-				2752EA9618E8DA81001EF848 /* ReceitaStore.m */,
+				65545A1418F885F0005B7505 /* Visualizacao */,
+				65545A1318F885DF005B7505 /* Criacao */,
+				65545A1618F88613005B7505 /* Geral */,
 				2752EA7818E8DA1A001EF848 /* Images.xcassets */,
 				2752EA6D18E8DA1A001EF848 /* Supporting Files */,
-				2752EA9818E8DB92001EF848 /* Receita.h */,
-				65415B6018F5A9C6004F7771 /* Ingrediente.h */,
-				65415B6318F5AFF1004F7771 /* ViewControllerTabelaReceitas.h */,
-				65415B6418F5AFF1004F7771 /* ViewControllerTabelaReceitas.m */,
-				65415B6118F5A9C6004F7771 /* Ingrediente.m */,
-				2752EA9918E8DB92001EF848 /* Receita.m */,
-				2752EA9B18E8DC9F001EF848 /* ReceitaViewController.h */,
-				65415B6818F5BA86004F7771 /* ViewControllerTelaInicial.h */,
-				65415B6918F5BA86004F7771 /* ViewControllerTelaInicial.m */,
-				2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */,
+				65545A1518F88606005B7505 /* Entidades */,
 			);
 			path = Receitas;
 			sourceTree = "<group>";
@@ -195,6 +168,52 @@
 				2752EA8818E8DA1A001EF848 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65545A1318F885DF005B7505 /* Criacao */ = {
+			isa = PBXGroup;
+			children = (
+				65415B7118F5D136004F7771 /* ViewControllerCriacaoReceita.h */,
+				65415B7218F5D136004F7771 /* ViewControllerCriacaoReceita.m */,
+				65415B7418F5DD49004F7771 /* ViewControllerTelaCriacaoInstrucoes.h */,
+				65415B7518F5DD49004F7771 /* ViewControllerTelaCriacaoInstrucoes.m */,
+				65415B7718F5E0C7004F7771 /* ViewControllerNovoIngrediente.h */,
+				65415B7818F5E0C7004F7771 /* ViewControllerNovoIngrediente.m */,
+			);
+			name = Criacao;
+			sourceTree = "<group>";
+		};
+		65545A1418F885F0005B7505 /* Visualizacao */ = {
+			isa = PBXGroup;
+			children = (
+				65415B6E18F5C038004F7771 /* ViewControllerDetalhesReceita.h */,
+				65415B6F18F5C038004F7771 /* ViewControllerDetalhesReceita.m */,
+			);
+			name = Visualizacao;
+			sourceTree = "<group>";
+		};
+		65545A1518F88606005B7505 /* Entidades */ = {
+			isa = PBXGroup;
+			children = (
+				2752EA9818E8DB92001EF848 /* Receita.h */,
+				65415B6018F5A9C6004F7771 /* Ingrediente.h */,
+				65415B6118F5A9C6004F7771 /* Ingrediente.m */,
+				2752EA9918E8DB92001EF848 /* Receita.m */,
+			);
+			name = Entidades;
+			sourceTree = "<group>";
+		};
+		65545A1618F88613005B7505 /* Geral */ = {
+			isa = PBXGroup;
+			children = (
+				2752EA7518E8DA1A001EF848 /* MackenzieAppDelegate.h */,
+				2752EA7618E8DA1A001EF848 /* MackenzieAppDelegate.m */,
+				2752EA9518E8DA81001EF848 /* ReceitaStore.h */,
+				2752EA9618E8DA81001EF848 /* ReceitaStore.m */,
+				65415B6318F5AFF1004F7771 /* ViewControllerTabelaReceitas.h */,
+				65415B6418F5AFF1004F7771 /* ViewControllerTabelaReceitas.m */,
+			);
+			name = Geral;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +292,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65415B6718F5B87E004F7771 /* imgteste.jpg in Resources */,
 				2752EA7118E8DA1A001EF848 /* InfoPlist.strings in Resources */,
 				2752EA7918E8DA1A001EF848 /* Images.xcassets in Resources */,
 			);
@@ -298,9 +316,7 @@
 				65415B7918F5E0C7004F7771 /* ViewControllerNovoIngrediente.m in Sources */,
 				65415B6218F5A9C6004F7771 /* Ingrediente.m in Sources */,
 				2752EA7718E8DA1A001EF848 /* MackenzieAppDelegate.m in Sources */,
-				2752EA9D18E8DC9F001EF848 /* ReceitaViewController.m in Sources */,
 				2752EA9A18E8DB92001EF848 /* Receita.m in Sources */,
-				65415B6A18F5BA86004F7771 /* ViewControllerTelaInicial.m in Sources */,
 				2752EA7318E8DA1A001EF848 /* main.m in Sources */,
 				2752EA9718E8DA81001EF848 /* ReceitaStore.m in Sources */,
 				65415B7318F5D136004F7771 /* ViewControllerCriacaoReceita.m in Sources */,
