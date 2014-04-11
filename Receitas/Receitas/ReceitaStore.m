@@ -9,7 +9,7 @@
 #import "ReceitaStore.h"
 
 @implementation ReceitaStore {
-    NSArray *receitas;
+    NSMutableArray *receitas;
     NSInteger current;
 }
 
@@ -25,35 +25,46 @@
 -(id)initPrivado {
     self = [super init];
     if(self) {
-        // TODO recuperar as receitas do arquivo
+       NSString *caminho = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0]stringByAppendingPathComponent:@"receitas.txt"];
+        NSLog(@"%@",caminho);
+        NSData *leitura = [[NSData alloc] initWithContentsOfFile:caminho];
+        receitas = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:leitura]];
     }
     return self;
 }
 
-
--(Receita*)previous {
-    if(current == 0) {
-        current = receitas.count - 1;
-    } else {
-        current--;
-    }
-    return [receitas objectAtIndex:current];
+-(NSUInteger) quantidadeReceitas {
+    return [receitas count];
 }
 
--(Receita*)next {
-    if(current == receitas.count - 1) {
-        current = 0;
-    } else {
-        current++;
-    }
-    return [receitas objectAtIndex:current];
+-(Receita *)obterReceitaDoIndice:(NSUInteger)indice {
+    return [receitas objectAtIndex:indice];
 }
+
+-(NSArray *)obterReceitas {
+    return receitas;
+}
+
 
 -(void)addReceita:(Receita*)novaReceita {
-    // TODO implementar este metodo -> adicionar no array e no arquivo!!!
+    [receitas addObject:novaReceita];
+    [self salvarArquivo];
+
 }
 
 
+-(void)deletarReceita:(Receita *)receita {
+    [receitas removeObject:receita];
+    [self salvarArquivo];
+}
 
+-(void)salvarArquivo {
+    NSString *caminho = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0]stringByAppendingPathComponent:@"receitas.txt"];
+    NSData *dadosParaEscrever = [NSKeyedArchiver archivedDataWithRootObject:receitas];
+    BOOL resultado = [dadosParaEscrever writeToFile:caminho atomically:YES];
+    if (!resultado) {
+        NSLog(@"Erro de escrita");
+    }
+}
 
 @end
