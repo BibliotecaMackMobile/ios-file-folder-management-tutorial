@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ReceitaViewController : UIViewController
+-(IBAction) adicionar: (id) sender;
 
 @end

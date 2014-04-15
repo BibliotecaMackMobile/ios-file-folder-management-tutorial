@@ -22,6 +22,9 @@
 		2752EA9718E8DA81001EF848 /* ReceitaStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9618E8DA81001EF848 /* ReceitaStore.m */; };
 		2752EA9A18E8DB92001EF848 /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9918E8DB92001EF848 /* Receita.m */; };
 		2752EA9D18E8DC9F001EF848 /* ReceitaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */; };
+		2B3C951618F328B000F7C286 /* Ingrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C951518F328B000F7C286 /* Ingrediente.m */; };
+		2B972B7218F7287500258554 /* NovaReceitaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B972B7418F7287500258554 /* NovaReceitaView.xib */; };
+		2B972B7718F7319E00258554 /* NovaReceitaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B972B7618F7319E00258554 /* NovaReceitaViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,11 @@
 		2752EA9918E8DB92001EF848 /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receita.m; sourceTree = "<group>"; };
 		2752EA9B18E8DC9F001EF848 /* ReceitaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceitaViewController.h; sourceTree = "<group>"; };
 		2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceitaViewController.m; sourceTree = "<group>"; };
+		2B3C951418F328B000F7C286 /* Ingrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingrediente.h; sourceTree = "<group>"; };
+		2B3C951518F328B000F7C286 /* Ingrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingrediente.m; sourceTree = "<group>"; };
+		2B972B7318F7287500258554 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NovaReceitaView.xib; sourceTree = "<group>"; };
+		2B972B7518F7319E00258554 /* NovaReceitaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NovaReceitaViewController.h; sourceTree = "<group>"; };
+		2B972B7618F7319E00258554 /* NovaReceitaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NovaReceitaViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,11 @@
 				2752EA9918E8DB92001EF848 /* Receita.m */,
 				2752EA9B18E8DC9F001EF848 /* ReceitaViewController.h */,
 				2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */,
+				2B3C951418F328B000F7C286 /* Ingrediente.h */,
+				2B3C951518F328B000F7C286 /* Ingrediente.m */,
+				2B972B7418F7287500258554 /* NovaReceitaView.xib */,
+				2B972B7518F7319E00258554 /* NovaReceitaViewController.h */,
+				2B972B7618F7319E00258554 /* NovaReceitaViewController.m */,
 			);
 			path = Receitas;
 			sourceTree = "<group>";
@@ -235,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B972B7218F7287500258554 /* NovaReceitaView.xib in Resources */,
 				2752EA7118E8DA1A001EF848 /* InfoPlist.strings in Resources */,
 				2752EA7918E8DA1A001EF848 /* Images.xcassets in Resources */,
 			);
@@ -255,11 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3C951618F328B000F7C286 /* Ingrediente.m in Sources */,
 				2752EA7718E8DA1A001EF848 /* MackenzieAppDelegate.m in Sources */,
 				2752EA9D18E8DC9F001EF848 /* ReceitaViewController.m in Sources */,
 				2752EA9A18E8DB92001EF848 /* Receita.m in Sources */,
 				2752EA7318E8DA1A001EF848 /* main.m in Sources */,
 				2752EA9718E8DA81001EF848 /* ReceitaStore.m in Sources */,
+				2B972B7718F7319E00258554 /* NovaReceitaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +312,14 @@
 				2752EA8918E8DA1A001EF848 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2B972B7418F7287500258554 /* NovaReceitaView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B972B7318F7287500258554 /* en */,
+			);
+			name = NovaReceitaView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -458,6 +482,7 @@
 				2752EA9118E8DA1A001EF848 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2752EA9218E8DA1A001EF848 /* Build configuration list for PBXNativeTarget "ReceitasTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +491,7 @@
 				2752EA9418E8DA1A001EF848 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

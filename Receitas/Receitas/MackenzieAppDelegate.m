@@ -8,11 +8,14 @@
 
 #import "MackenzieAppDelegate.h"
 #import "ReceitaViewController.h"
+#import "ReceitaStore.h"
+#import "Receita.h"
 
 @implementation MackenzieAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(NSTemporaryDirectory());
     ReceitaViewController *viewController = [[ReceitaViewController alloc]
                                             initWithNibName:nil
                                             bundle:nil];
@@ -23,8 +26,18 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navigationController; 
     self.window.backgroundColor = [UIColor whiteColor];
+    
     [self.window makeKeyAndVisible];
+    
+    
+    
     return YES;
+}
+
++ (NSURL *) caminhoDoArquivo{
+    NSFileManager *manager = [[NSFileManager alloc] init];
+    NSURL *path = [[manager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] objectAtIndex:0];
+    return [path URLByAppendingPathComponent:@"receitas.archive"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

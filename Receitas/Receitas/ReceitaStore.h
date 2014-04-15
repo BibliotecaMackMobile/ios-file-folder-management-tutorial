@@ -15,6 +15,7 @@
 
 -(Receita *)next;
 -(Receita *)previous;
+-(Receita *)atual;
 -(void)addReceita:(Receita*)novaReceita;
 
 @end

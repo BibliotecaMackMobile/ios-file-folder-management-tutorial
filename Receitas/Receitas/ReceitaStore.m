@@ -7,11 +7,15 @@
 //
 
 #import "ReceitaStore.h"
+#import "MackenzieAppDelegate.h"
 
 @implementation ReceitaStore {
-    NSArray *receitas;
+    NSMutableArray *receitas;
     NSInteger current;
 }
+
+
+
 
 + (ReceitaStore *)sharedInstance
 {
@@ -25,11 +29,25 @@
 -(id)initPrivado {
     self = [super init];
     if(self) {
-        // TODO recuperar as receitas do arquivo
+        
+        NSURL *caminho = [MackenzieAppDelegate caminhoDoArquivo];
+        receitas = [NSKeyedUnarchiver unarchiveObjectWithFile:[caminho path]];
+        if (!receitas) {
+            receitas = [[NSMutableArray alloc] init];
+        }
+        current = 0;
     }
     return self;
 }
 
+-(Receita *)atual {
+    if (current < 0 || current >= [receitas count]) {
+        return nil;
+    }
+    else {
+        return [receitas objectAtIndex:current];
+    }
+}
 
 -(Receita*)previous {
     if(current == 0) {
@@ -37,7 +55,7 @@
     } else {
         current--;
     }
-    return [receitas objectAtIndex:current];
+    return [self atual];
 }
 
 -(Receita*)next {
@@ -46,11 +64,15 @@
     } else {
         current++;
     }
-    return [receitas objectAtIndex:current];
+    return [self atual];
 }
 
 -(void)addReceita:(Receita*)novaReceita {
     // TODO implementar este metodo -> adicionar no array e no arquivo!!!
+    [receitas addObject:novaReceita];
+    NSURL *caminho = [MackenzieAppDelegate caminhoDoArquivo];
+    [receitas addObject:novaReceita];
+    [NSKeyedArchiver archiveRootObject:(NSArray *)receitas toFile:[caminho path]];
 }
 
 
