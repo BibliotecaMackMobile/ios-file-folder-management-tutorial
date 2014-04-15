@@ -30,6 +30,9 @@
     return self;
 }
 
+-(Receita *)atual{
+    return [receitas objectAtIndex:current];
+}
 
 -(Receita*)previous {
     if(current == 0) {
