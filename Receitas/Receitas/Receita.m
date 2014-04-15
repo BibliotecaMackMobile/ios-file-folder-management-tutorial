@@ -9,5 +9,23 @@
 #import "Receita.h"
 
 @implementation Receita
+@synthesize passos, nomeReceita, ingredientes;
 
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeObject:passos forKey:@"passos"];
+    [aCoder encodeObject:nomeReceita forKey:@"nomeReceita"];
+    [aCoder encodeObject:ingredientes forKey:@"ingredientes"];
+    
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder{
+    self = [super init];
+    if (self) {
+        passos = [aDecoder decodeObjectForKey:@"passos"];
+        nomeReceita = [aDecoder decodeObjectForKey:@"nomeReceita"];
+        ingredientes = [aDecoder decodeObjectForKey:@"ingredientes"];
+        
+    }
+    return self;
+}
 @end

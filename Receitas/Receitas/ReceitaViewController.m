@@ -104,6 +104,13 @@
 
 - (void)update
 {
+    R.nomeReceita = nome.text;
+    R.passos = modoDePreparo.text;
+    
+    for (int i = 0; i <ingredientes.numberOfLines; i++) {
+        R.ingredientes[i] = ingredientes.text ;
+        
+    }
     // TODO atualizar a view com a receita atual
 }
 
