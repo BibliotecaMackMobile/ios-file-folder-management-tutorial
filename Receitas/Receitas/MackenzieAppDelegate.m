@@ -24,6 +24,30 @@
     self.window.rootViewController = self.navigationController; 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
+    
+    NSFileManager *file = [[NSFileManager alloc]init];
+    NSArray *u = [file URLsForDirectory: NSDocumentDirectory inDomains :NSUserDomainMask] ;
+                  for(int i =0; i < [ u count]; i ++){
+                      NSLog(@"%@", u[i]);
+                  }
+    
+                  NSString *c = [NSTemporaryDirectory() stringByAppendingPathComponent: @"MeuArquivo.txt"];
+                  NSArray *nome = @[@"Paz", @"Amor"];
+                  BOOL result = [ nome writeToFile:c atomically:YES];
+                  NSArray *leitura = [[NSArray alloc]initWithContentsOfFile:c];
+                  if([leitura count] != [nome count]){
+                      NSLog(@"FALHA LEITURA!");
+                  }
+                  if(! result){
+                      NSLog(@"FALHA ESCRITA");
+                  
+                  }
+    
+    
+    
+    
     return YES;
 }
 

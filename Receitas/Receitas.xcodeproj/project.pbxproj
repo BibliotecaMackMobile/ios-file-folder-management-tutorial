@@ -22,6 +22,8 @@
 		2752EA9718E8DA81001EF848 /* ReceitaStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9618E8DA81001EF848 /* ReceitaStore.m */; };
 		2752EA9A18E8DB92001EF848 /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9918E8DB92001EF848 /* Receita.m */; };
 		2752EA9D18E8DC9F001EF848 /* ReceitaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */; };
+		5B86B23318FC7865003999DD /* Ingredientes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86B23218FC7865003999DD /* Ingredientes.m */; };
+		5B86B23518FDC626003999DD /* abacaxii.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B86B23418FDC626003999DD /* abacaxii.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,13 +52,16 @@
 		2752EA7F18E8DA1A001EF848 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2752EA8718E8DA1A001EF848 /* ReceitasTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReceitasTests-Info.plist"; sourceTree = "<group>"; };
 		2752EA8918E8DA1A001EF848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2752EA8B18E8DA1A001EF848 /* ReceitasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceitasTests.m; sourceTree = "<group>"; };
+		2752EA8B18E8DA1A001EF848 /* ReceitasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ReceitasTests.m; path = ReceitasTests/ReceitasTests.m; sourceTree = SOURCE_ROOT; };
 		2752EA9518E8DA81001EF848 /* ReceitaStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceitaStore.h; sourceTree = "<group>"; };
 		2752EA9618E8DA81001EF848 /* ReceitaStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceitaStore.m; sourceTree = "<group>"; };
 		2752EA9818E8DB92001EF848 /* Receita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receita.h; sourceTree = "<group>"; };
 		2752EA9918E8DB92001EF848 /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receita.m; sourceTree = "<group>"; };
 		2752EA9B18E8DC9F001EF848 /* ReceitaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceitaViewController.h; sourceTree = "<group>"; };
 		2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceitaViewController.m; sourceTree = "<group>"; };
+		5B86B23118FC7865003999DD /* Ingredientes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredientes.h; sourceTree = "<group>"; };
+		5B86B23218FC7865003999DD /* Ingredientes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingredientes.m; sourceTree = "<group>"; };
+		5B86B23418FDC626003999DD /* abacaxii.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abacaxii.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,12 +125,15 @@
 				2752EA7618E8DA1A001EF848 /* MackenzieAppDelegate.m */,
 				2752EA9518E8DA81001EF848 /* ReceitaStore.h */,
 				2752EA9618E8DA81001EF848 /* ReceitaStore.m */,
-				2752EA7818E8DA1A001EF848 /* Images.xcassets */,
-				2752EA6D18E8DA1A001EF848 /* Supporting Files */,
 				2752EA9818E8DB92001EF848 /* Receita.h */,
 				2752EA9918E8DB92001EF848 /* Receita.m */,
 				2752EA9B18E8DC9F001EF848 /* ReceitaViewController.h */,
 				2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */,
+				2752EA8B18E8DA1A001EF848 /* ReceitasTests.m */,
+				5B86B23118FC7865003999DD /* Ingredientes.h */,
+				5B86B23218FC7865003999DD /* Ingredientes.m */,
+				2752EA7818E8DA1A001EF848 /* Images.xcassets */,
+				2752EA6D18E8DA1A001EF848 /* Supporting Files */,
 			);
 			path = Receitas;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 				2752EA6F18E8DA1A001EF848 /* InfoPlist.strings */,
 				2752EA7218E8DA1A001EF848 /* main.m */,
 				2752EA7418E8DA1A001EF848 /* Receitas-Prefix.pch */,
+				5B86B23418FDC626003999DD /* abacaxii.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -144,7 +153,6 @@
 		2752EA8518E8DA1A001EF848 /* ReceitasTests */ = {
 			isa = PBXGroup;
 			children = (
-				2752EA8B18E8DA1A001EF848 /* ReceitasTests.m */,
 				2752EA8618E8DA1A001EF848 /* Supporting Files */,
 			);
 			path = ReceitasTests;
@@ -237,6 +245,7 @@
 			files = (
 				2752EA7118E8DA1A001EF848 /* InfoPlist.strings in Resources */,
 				2752EA7918E8DA1A001EF848 /* Images.xcassets in Resources */,
+				5B86B23518FDC626003999DD /* abacaxii.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +268,7 @@
 				2752EA9D18E8DC9F001EF848 /* ReceitaViewController.m in Sources */,
 				2752EA9A18E8DB92001EF848 /* Receita.m in Sources */,
 				2752EA7318E8DA1A001EF848 /* main.m in Sources */,
+				5B86B23318FC7865003999DD /* Ingredientes.m in Sources */,
 				2752EA9718E8DA81001EF848 /* ReceitaStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +468,7 @@
 				2752EA9118E8DA1A001EF848 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2752EA9218E8DA1A001EF848 /* Build configuration list for PBXNativeTarget "ReceitasTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +477,7 @@
 				2752EA9418E8DA1A001EF848 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
