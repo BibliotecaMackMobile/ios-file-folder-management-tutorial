@@ -11,12 +11,12 @@
 @interface Receita : NSObject<NSCoding>
 // TODO Definir os atributos da receita e permitir que ela seja armazenada em arquivo.
 {
-NSString *nomeReceita;
-NSString *passos;
+NSString *nome;
+NSMutableArray *passos;
 NSMutableArray *ingredientes;
 }
 
 
-@property NSString *passos, *nomeReceita;
-@property NSMutableArray *ingredientes;
+@property NSString *nomeReceita;
+@property NSMutableArray *ingredientes, *passos;
 @end

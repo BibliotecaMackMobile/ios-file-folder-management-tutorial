@@ -10,7 +10,7 @@
 #import "Receita.h"
 
 @interface ReceitaViewController : UIViewController
-{
-    Receita *R;
-}
+
+@property int receitaNum;
+
 @end

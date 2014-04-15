@@ -13,7 +13,7 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeObject:passos forKey:@"passos"];
-    [aCoder encodeObject:nomeReceita forKey:@"nomeReceita"];
+    [aCoder encodeObject:nome forKey:@"nomeReceita"];
     [aCoder encodeObject:ingredientes forKey:@"ingredientes"];
     
 }
@@ -22,7 +22,7 @@
     self = [super init];
     if (self) {
         passos = [aDecoder decodeObjectForKey:@"passos"];
-        nomeReceita = [aDecoder decodeObjectForKey:@"nomeReceita"];
+        nome = [aDecoder decodeObjectForKey:@"nomeReceita"];
         ingredientes = [aDecoder decodeObjectForKey:@"ingredientes"];
         
     }
