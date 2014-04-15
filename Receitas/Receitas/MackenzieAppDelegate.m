@@ -7,19 +7,18 @@
 //
 
 #import "MackenzieAppDelegate.h"
-#import "ReceitaViewController.h"
+#import "ViewControllerTabelaReceitas.h"
 
 @implementation MackenzieAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    ReceitaViewController *viewController = [[ReceitaViewController alloc]
-                                            initWithNibName:nil
-                                            bundle:nil];
-    
-    
+   
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    ViewControllerTabelaReceitas *tabelaReceitas = [[ViewControllerTabelaReceitas alloc] initWithStyle:UITableViewStylePlain];
     self.navigationController = [[UINavigationController alloc]
-                                 initWithRootViewController:viewController];
+                                 initWithRootViewController:tabelaReceitas];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navigationController; 
     self.window.backgroundColor = [UIColor whiteColor];

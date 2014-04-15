@@ -13,8 +13,10 @@
 
 + (ReceitaStore *)sharedInstance;
 
--(Receita *)next;
--(Receita *)previous;
 -(void)addReceita:(Receita*)novaReceita;
+-(Receita *)obterReceitaDoIndice:(NSUInteger)indice;
+-(NSArray *)obterReceitas;
+-(NSUInteger)quantidadeReceitas;
+-(void)deletarReceita:(Receita *)receita;
 
 @end
