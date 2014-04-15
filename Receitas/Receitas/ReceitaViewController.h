@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Receita.h"
 
 @interface ReceitaViewController : UIViewController
+
+@property int receitaNum;
 
 @end
