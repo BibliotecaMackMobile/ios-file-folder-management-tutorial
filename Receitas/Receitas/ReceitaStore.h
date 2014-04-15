@@ -11,7 +11,7 @@
 
 @interface ReceitaStore : NSObject
 
-+ (ReceitaStore *)sharedInstance;
++(ReceitaStore *)sharedInstance;
 
 -(Receita *)next;
 -(Receita *)previous;

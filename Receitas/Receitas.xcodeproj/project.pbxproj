@@ -22,6 +22,7 @@
 		2752EA9718E8DA81001EF848 /* ReceitaStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9618E8DA81001EF848 /* ReceitaStore.m */; };
 		2752EA9A18E8DB92001EF848 /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9918E8DB92001EF848 /* Receita.m */; };
 		2752EA9D18E8DC9F001EF848 /* ReceitaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */; };
+		EA5FA21318FC563C00C847AB /* Ingredientes.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5FA21218FC563C00C847AB /* Ingredientes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		2752EA9918E8DB92001EF848 /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receita.m; sourceTree = "<group>"; };
 		2752EA9B18E8DC9F001EF848 /* ReceitaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceitaViewController.h; sourceTree = "<group>"; };
 		2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceitaViewController.m; sourceTree = "<group>"; };
+		EA5FA21118FC563C00C847AB /* Ingredientes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredientes.h; sourceTree = "<group>"; };
+		EA5FA21218FC563C00C847AB /* Ingredientes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingredientes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,12 +123,14 @@
 				2752EA7618E8DA1A001EF848 /* MackenzieAppDelegate.m */,
 				2752EA9518E8DA81001EF848 /* ReceitaStore.h */,
 				2752EA9618E8DA81001EF848 /* ReceitaStore.m */,
-				2752EA7818E8DA1A001EF848 /* Images.xcassets */,
-				2752EA6D18E8DA1A001EF848 /* Supporting Files */,
-				2752EA9818E8DB92001EF848 /* Receita.h */,
 				2752EA9918E8DB92001EF848 /* Receita.m */,
+				2752EA9818E8DB92001EF848 /* Receita.h */,
+				EA5FA21118FC563C00C847AB /* Ingredientes.h */,
+				EA5FA21218FC563C00C847AB /* Ingredientes.m */,
 				2752EA9B18E8DC9F001EF848 /* ReceitaViewController.h */,
 				2752EA9C18E8DC9F001EF848 /* ReceitaViewController.m */,
+				2752EA7818E8DA1A001EF848 /* Images.xcassets */,
+				2752EA6D18E8DA1A001EF848 /* Supporting Files */,
 			);
 			path = Receitas;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				2752EA9D18E8DC9F001EF848 /* ReceitaViewController.m in Sources */,
 				2752EA9A18E8DB92001EF848 /* Receita.m in Sources */,
 				2752EA7318E8DA1A001EF848 /* main.m in Sources */,
+				EA5FA21318FC563C00C847AB /* Ingredientes.m in Sources */,
 				2752EA9718E8DA81001EF848 /* ReceitaStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,7 +387,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Receitas/Receitas-Prefix.pch";
 				INFOPLIST_FILE = "Receitas/Receitas-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -394,7 +402,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Receitas/Receitas-Prefix.pch";
 				INFOPLIST_FILE = "Receitas/Receitas-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
