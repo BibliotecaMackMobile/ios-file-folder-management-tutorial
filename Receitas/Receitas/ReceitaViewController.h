@@ -10,4 +10,5 @@
 
 @interface ReceitaViewController : UIViewController
 
+@property int receitaNum;
 @end
